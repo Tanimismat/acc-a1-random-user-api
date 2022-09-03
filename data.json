@@ -1,6 +1,6 @@
 [
 	{
-		"_id": "1",
+		"id": "1",
 		"photoUrl": "http://placehold.it/32x32",
 		"name": "Maryanne Madden",
 		"gender": "female",
@@ -8,7 +8,7 @@
 		"address": "100 Sands Street, Kanauga, Puerto Rico, 1525"
 	},
 	{
-		"_id": "2",
+		"id": "2",
 		"photoUrl": "http://placehold.it/32x32",
 		"name": "Hunter Gallagher",
 		"gender": "male",
@@ -16,7 +16,7 @@
 		"address": "380 Lorraine Street, Nile, Indiana, 7916"
 	},
 	{
-		"_id": "3",
+		"id": "3",
 		"photoUrl": "http://placehold.it/32x32",
 		"name": "Antoinette Murray",
 		"gender": "female",
@@ -24,7 +24,7 @@
 		"address": "853 Gerry Street, Gallina, Massachusetts, 569"
 	},
 	{
-		"_id": "4",
+		"id": "4",
 		"photoUrl": "http://placehold.it/32x32",
 		"name": "Valenzuela Petty",
 		"gender": "male",
@@ -32,7 +32,7 @@
 		"address": "645 Battery Avenue, Boling, Arizona, 8416"
 	},
 	{
-		"_id": "5",
+		"id": "5",
 		"photoUrl": "http://placehold.it/32x32",
 		"name": "Enid Herring",
 		"gender": "female",
@@ -40,7 +40,7 @@
 		"address": "266 Church Avenue, Jackpot, Rhode Island, 2768"
 	},
 	{
-		"_id": "6",
+		"id": "6",
 		"photoUrl": "http://placehold.it/32x32",
 		"name": "Casey Hart",
 		"gender": "female",
@@ -48,7 +48,7 @@
 		"address": "799 Quay Street, Stockwell, Oklahoma, 4241"
 	},
 	{
-		"_id": "7",
+		"id": "7",
 		"photoUrl": "http://placehold.it/32x32",
 		"name": "Reese Roy",
 		"gender": "male",
@@ -56,7 +56,7 @@
 		"address": "575 Court Street, Rosedale, District Of Columbia, 9467"
 	},
 	{
-		"_id": "8",
+		"id": "8",
 		"photoUrl": "http://placehold.it/32x32",
 		"name": "Terri Kaufman",
 		"gender": "female",
@@ -64,7 +64,7 @@
 		"address": "220 Bleecker Street, Unionville, Louisiana, 5239"
 	},
 	{
-		"_id": "9",
+		"id": "9",
 		"photoUrl": "http://placehold.it/32x32",
 		"name": "Aida Melendez",
 		"gender": "female",
