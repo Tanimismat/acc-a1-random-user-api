@@ -36,10 +36,10 @@ app.get("/user/random", (req, res) => {
 				res.end();
 			} else {
 				console.log(data);
-				let user = getRandomUser(data);
+				let user = getRandomUser(JSON.parse(data));
 				console.log(user);
-				res.writeHead(200, { "Content-Type": "application/json" });
-				res.write(JSON.stringify(user.toString()));
+				// res.writeHead(200, { "Content-Type": "application/json" });
+				res.write(JSON.stringify(user));
 				res.end();
 			}
 		});
