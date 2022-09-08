@@ -13,10 +13,10 @@ app.get("/user/all", (req, res) => {
 			res.write("Failed to load data!");
 			res.end();
 		} else {
-			// const { limit, page } = req.query;
-			// console.log(limit, page);
-			// res.json(data.slice(0, limit));
-			res.write(data);
+			const { limit, page } = req.query;
+			console.log(limit, page);
+			res.json(JSON.parse(data).slice(0, limit));
+			// res.write(data);
 			res.end();
 		}
 	});
