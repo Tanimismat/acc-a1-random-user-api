@@ -48,9 +48,9 @@ app.get("/user/random", (req, res) => {
 			res.write("Failed to load a random user!");
 			res.end();
 		} else {
-			console.log(data);
+			// console.log(data);
 			let user = getRandomUser(JSON.parse(data));
-			console.log(user);
+			// console.log(user);
 			// res.writeHead(200, { "Content-Type": "application/json" });
 			res.write(JSON.stringify(user));
 			res.end();
@@ -59,9 +59,6 @@ app.get("/user/random", (req, res) => {
 });
 
 app.post("/user/save", (req, res) => {
-	// console.log(req.body);
-
-	// let data = JSON.stringify(user);
 	fs.readFile("data.json", (err, data) => {
 		if (err) {
 			res.write("Failed to save user!");
@@ -73,7 +70,35 @@ app.post("/user/save", (req, res) => {
 			res.end();
 		}
 	});
-	// res.send("sending data");
+});
+
+app.patch("/user/update/:id", (req, res) => {
+	if ((req.url = "/user/:id")) {
+		const { id } = req.params;
+		const filter = { id: id };
+
+		fs.readFile("data.json", (err, data) => {
+			// console.log(data);
+			if (err) {
+				res.write("Failed to update a user!");
+				res.end();
+			} else {
+				const users = JSON.parse(data);
+				// console.log(users);
+				const newData = users.find((u) => u.id == id);
+				// console.log(newData);
+				newData.id = id;
+				newData.photoUrl = req.body.photoUrl;
+				newData.name = req.body.name;
+				newData.gender = req.body.gender;
+				newData.contact = req.body.contact;
+				newData.address = req.body.address;
+				res.write(JSON.stringify(newData));
+				// res.send(newData);
+				res.end();
+			}
+		});
+	}
 });
 
 app.listen(port, () => {
