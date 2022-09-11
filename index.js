@@ -65,7 +65,7 @@ app.post("/user/save", (req, res) => {
 			res.end();
 		} else {
 			user.push(req.body);
-			res.write(JSON.stringify(user, null, 2));
+			res.send(JSON.stringify(user, null, 2));
 			// res.write("data written successfully");
 			res.end();
 		}
@@ -93,12 +93,27 @@ app.patch("/user/update/:id", (req, res) => {
 				newData.gender = req.body.gender;
 				newData.contact = req.body.contact;
 				newData.address = req.body.address;
-				res.write(JSON.stringify(newData));
+				res.send(JSON.stringify(newData));
 				// res.send(newData);
 				res.end();
 			}
 		});
 	}
+});
+
+app.delete("/user/delete/:id", (req, res) => {
+	fs.readFile("data.json", (err, data) => {
+		if (err) {
+			res.write("Failed to delete a user!");
+			res.end();
+		} else {
+			const { id } = req.params;
+			const filter = { id: id };
+			user = user.filter((u) => u.id !== id);
+			// console.log(user);
+			res.send(user);
+		}
+	});
 });
 
 app.listen(port, () => {
