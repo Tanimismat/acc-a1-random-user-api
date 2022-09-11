@@ -1,14 +1,3 @@
-// let user = [
-// 	{
-// 		id: "1",
-// 		photoUrl: "http://placehold.it/32x32",
-// 		name: "Maryanne Madden",
-// 		gender: "female",
-// 		contact: "+1 (918) 530-2617",
-// 		address: "100 Sands Street, Kanauga, Puerto Rico, 1525",
-// 	},
-// ];
-
 let user = require("./data.json");
 
 const express = require("express");
