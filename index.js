@@ -1,13 +1,15 @@
-let user = [
-	{
-		id: "1",
-		photoUrl: "http://placehold.it/32x32",
-		name: "Maryanne Madden",
-		gender: "female",
-		contact: "+1 (918) 530-2617",
-		address: "100 Sands Street, Kanauga, Puerto Rico, 1525",
-	},
-];
+// let user = [
+// 	{
+// 		id: "1",
+// 		photoUrl: "http://placehold.it/32x32",
+// 		name: "Maryanne Madden",
+// 		gender: "female",
+// 		contact: "+1 (918) 530-2617",
+// 		address: "100 Sands Street, Kanauga, Puerto Rico, 1525",
+// 	},
+// ];
+
+let user = require("./data.json");
 
 const express = require("express");
 const app = express();
@@ -57,18 +59,18 @@ app.get("/user/random", (req, res) => {
 });
 
 app.post("/user/save", (req, res) => {
-	console.log(req.body);
+	// console.log(req.body);
 
-	let data = JSON.stringify(user);
-	fs.appendFile("data.json", data, (err) => {
+	// let data = JSON.stringify(user);
+	fs.readFile("data.json", (err, data) => {
 		if (err) {
 			res.write("Failed to save user!");
 			res.end();
 		} else {
-			user.push(data);
-			res.send(user);
+			user.push(req.body);
+			res.write(JSON.stringify(user, null, 2));
 			// res.write("data written successfully");
-			// res.end();
+			res.end();
 		}
 	});
 	// res.send("sending data");
